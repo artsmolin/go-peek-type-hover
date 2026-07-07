@@ -24,7 +24,6 @@ To see what's actually inside `AppConfig`, you have to jump to its definition (`
 - 🔍 **Full type definition in the hover tooltip** — the body of a `struct { ... }`, `interface { ... }`, or the declaration line of an alias type.
 - 🧩 **Complements, not replaces**, the standard `gopls` hover — both blocks are shown together.
 - 🛡️ **Reliable fallback** — if `gopls` is temporarily unavailable, a built-in brace parser kicks in.
-- ⚙️ **Configurable output length** so huge structs don't flood the tooltip.
 
 ## How it works
 
@@ -55,12 +54,6 @@ npm run compile
 ```
 
 Then in VS Code press `F5` (the `Run Extension` configuration) to open a new Extension Development Host window, where you can open any Go project and hover over a variable.
-
-## Settings
-
-| Setting                     | Default | Description                                                        |
-| ---------------------------- | :-----: | -------------------------------------------------------------------- |
-| `goPeekTypeHover.maxLines`   |  `60`   | Maximum number of lines of the type definition shown in the hover  |
 
 ## License
 

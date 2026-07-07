@@ -1,8 +1,8 @@
 {
   "name": "go-peek-type-hover",
   "displayName": "Go Peek Type Hover",
-  "description": "Показывает полное определение типа переменной прямо во всплывающей подсказке (hover) в Go-файлах.",
-  "version": "0.0.2",
+  "description": "Shows the full type definition of a variable right inside the hover tooltip in Go files.",
+  "version": "0.0.3",
   "publisher": "artsmolin",
   "license": "MIT",
   "icon": "images/icon.png",
@@ -23,18 +23,7 @@
   "extensionDependencies": [
     "golang.go"
   ],
-  "contributes": {
-    "configuration": {
-      "title": "Go Peek Type Hover",
-      "properties": {
-        "goPeekTypeHover.maxLines": {
-          "type": "number",
-          "default": 60,
-          "description": "Максимальное число строк определения типа, показываемых в hover."
-        }
-      }
-    }
-  },
+  "contributes": {},
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",

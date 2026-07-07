@@ -1,12 +1,23 @@
 import * as vscode from 'vscode';
 
 const GO_LANGUAGE = 'go';
+const GO_TO_DEFINITION_COMMAND = 'goPeekTypeHover.goToDefinition';
 
 export function activate(context: vscode.ExtensionContext): void {
   const provider = vscode.languages.registerHoverProvider(GO_LANGUAGE, {
     provideHover,
   });
-  context.subscriptions.push(provider);
+  const goToDefinitionCommand = vscode.commands.registerCommand(
+    GO_TO_DEFINITION_COMMAND,
+    async (uriString: string, line: number, character: number) => {
+      const uri = vscode.Uri.parse(uriString);
+      const position = new vscode.Position(line, character);
+      await vscode.window.showTextDocument(uri, {
+        selection: new vscode.Range(position, position),
+      });
+    }
+  );
+  context.subscriptions.push(provider, goToDefinitionCommand);
 }
 
 export function deactivate(): void {
@@ -41,15 +52,16 @@ async function provideHover(
     return undefined;
   }
 
-  const maxLines = vscode.workspace
-    .getConfiguration('goPeekTypeHover')
-    .get<number>('maxLines', 60);
-
-  const trimmed = clampLines(definitionText, maxLines);
+  const goToDefinitionArgs = encodeURIComponent(
+    JSON.stringify([target.uri.toString(), target.range.start.line, target.range.start.character])
+  );
 
   const markdown = new vscode.MarkdownString();
-  markdown.appendMarkdown('**Peek type definition**\n');
-  markdown.appendCodeblock(trimmed, GO_LANGUAGE);
+  markdown.isTrusted = { enabledCommands: [GO_TO_DEFINITION_COMMAND] };
+  markdown.appendMarkdown(
+    `**Peek type definition** ([Go to definition](command:${GO_TO_DEFINITION_COMMAND}?${goToDefinitionArgs}))\n`
+  );
+  markdown.appendCodeblock(definitionText, GO_LANGUAGE);
 
   return new vscode.Hover(markdown, wordRange);
 }
@@ -150,12 +162,4 @@ function extractBraceBlockFallback(
 
   const range = new vscode.Range(startLine, 0, endLine, doc.lineAt(endLine).text.length);
   return doc.getText(range).trim();
-}
-
-function clampLines(text: string, maxLines: number): string {
-  const lines = text.split('\n');
-  if (lines.length <= maxLines) {
-    return text;
-  }
-  return lines.slice(0, maxLines).join('\n') + '\n// ... сокращено ...';
 }
