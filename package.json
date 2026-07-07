@@ -2,9 +2,14 @@
   "name": "go-peek-type-hover",
   "displayName": "Go Peek Type Hover",
   "description": "Показывает полное определение типа переменной прямо во всплывающей подсказке (hover) в Go-файлах.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "artsmolin",
   "license": "MIT",
+  "icon": "images/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/artsmolin/go-peek-type-hover.git"
+  },
   "engines": {
     "vscode": "^1.85.0"
   },
