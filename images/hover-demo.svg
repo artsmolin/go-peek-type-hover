@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="610" viewBox="0 0 760 610">
+  <defs>
+    <clipPath id="winclip">
+      <rect x="0" y="0" width="760" height="540" rx="14" ry="14" />
+    </clipPath>
+    <filter id="windowShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="18" flood-color="#000000" flood-opacity="0.35" />
+    </filter>
+    <filter id="tooltipShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="8" stdDeviation="14" flood-color="#000000" flood-opacity="0.5" />
+    </filter>
+    <linearGradient id="titlebarGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a3d41" />
+      <stop offset="1" stop-color="#323235" />
+    </linearGradient>
+  </defs>
+
+  <!-- floating window card -->
+  <g filter="url(#windowShadow)">
+    <g clip-path="url(#winclip)">
+      <rect x="0" y="0" width="760" height="540" fill="#1e1e1e" />
+
+      <!-- title bar -->
+      <rect x="0" y="0" width="760" height="40" fill="url(#titlebarGrad)" />
+      <circle cx="22" cy="20" r="6" fill="#ff5f56" />
+      <circle cx="44" cy="20" r="6" fill="#ffbd2e" />
+      <circle cx="66" cy="20" r="6" fill="#27c93f" />
+      <text x="380" y="25" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="12" fill="#cfcfcf">main.go — go-peek-type-hover</text>
+
+      <!-- gutter -->
+      <rect x="0" y="40" width="62" height="500" fill="#1e1e1e" />
+
+      <!-- current line highlight -->
+      <rect x="0" y="424" width="760" height="20" fill="#2a2d2e" opacity="0.7" />
+
+      <!-- line numbers -->
+      <g font-family="SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="12" fill="#6e7681" text-anchor="end">
+        <text x="54" y="86">1</text>
+        <text x="54" y="108">2</text>
+        <text x="54" y="130">3</text>
+        <text x="54" y="152">4</text>
+        <text x="54" y="174">5</text>
+        <text x="54" y="196">6</text>
+        <text x="54" y="218">7</text>
+        <text x="54" y="240">8</text>
+        <text x="54" y="262">9</text>
+        <text x="54" y="284">10</text>
+        <text x="54" y="306">11</text>
+        <text x="54" y="328">12</text>
+        <text x="54" y="350">13</text>
+        <text x="54" y="372">14</text>
+        <text x="54" y="394">15</text>
+        <text x="54" y="416">16</text>
+        <text x="54" y="438">17</text>
+        <text x="54" y="460">18</text>
+        <text x="54" y="482">19</text>
+      </g>
+
+      <!-- code -->
+      <g font-family="SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="14" xml:space="preserve">
+        <text x="74" y="86" xml:space="preserve"><tspan fill="#569cd6">package</tspan><tspan fill="#d4d4d4"> main</tspan></text>
+
+        <text x="74" y="130" xml:space="preserve"><tspan fill="#569cd6">import</tspan><tspan fill="#d4d4d4"> </tspan><tspan fill="#ce9178">"time"</tspan></text>
+
+        <text x="74" y="174" xml:space="preserve"><tspan fill="#569cd6">type</tspan><tspan fill="#d4d4d4"> </tspan><tspan fill="#4ec9b0">AppConfig</tspan><tspan fill="#d4d4d4"> </tspan><tspan fill="#569cd6">struct</tspan><tspan fill="#d4d4d4"> {</tspan></text>
+
+        <text x="74" y="196" xml:space="preserve"><tspan fill="#d4d4d4">    </tspan><tspan fill="#9cdcfe">Host</tspan><tspan fill="#d4d4d4">    </tspan><tspan fill="#4ec9b0">string</tspan></text>
+
+        <text x="74" y="218" xml:space="preserve"><tspan fill="#d4d4d4">    </tspan><tspan fill="#9cdcfe">Port</tspan><tspan fill="#d4d4d4">    </tspan><tspan fill="#4ec9b0">int</tspan></text>
+
+        <text x="74" y="240" xml:space="preserve"><tspan fill="#d4d4d4">    </tspan><tspan fill="#9cdcfe">Debug</tspan><tspan fill="#d4d4d4">   </tspan><tspan fill="#4ec9b0">bool</tspan></text>
+
+        <text x="74" y="262" xml:space="preserve"><tspan fill="#d4d4d4">    </tspan><tspan fill="#9cdcfe">Timeout</tspan><tspan fill="#d4d4d4"> </tspan><tspan fill="#d4d4d4">time</tspan><tspan fill="#d4d4d4">.</tspan><tspan fill="#4ec9b0">Duration</tspan></text>
+
+        <text x="74" y="284" xml:space="preserve"><tspan fill="#d4d4d4">}</tspan></text>
+
+        <text x="74" y="328" xml:space="preserve"><tspan fill="#569cd6">func</tspan><tspan fill="#d4d4d4"> </tspan><tspan fill="#dcdcaa">LoadConfig</tspan><tspan fill="#d4d4d4">() </tspan><tspan fill="#4ec9b0">AppConfig</tspan><tspan fill="#d4d4d4"> {</tspan></text>
+
+        <text x="74" y="350" xml:space="preserve"><tspan fill="#d4d4d4">    </tspan><tspan fill="#569cd6">return</tspan><tspan fill="#d4d4d4"> </tspan><tspan fill="#4ec9b0">AppConfig</tspan><tspan fill="#d4d4d4">{}</tspan></text>
+
+        <text x="74" y="372" xml:space="preserve"><tspan fill="#d4d4d4">}</tspan></text>
+
+        <text x="74" y="416" xml:space="preserve"><tspan fill="#569cd6">func</tspan><tspan fill="#d4d4d4"> </tspan><tspan fill="#dcdcaa">main</tspan><tspan fill="#d4d4d4">() {</tspan></text>
+
+        <text x="74" y="438" xml:space="preserve"><tspan fill="#d4d4d4">    </tspan><tspan fill="#9cdcfe">cfg</tspan><tspan fill="#d4d4d4"> := </tspan><tspan fill="#dcdcaa">LoadConfig</tspan><tspan fill="#d4d4d4">()</tspan></text>
+
+        <text x="74" y="460" xml:space="preserve"><tspan fill="#d4d4d4">    _ = </tspan><tspan fill="#9cdcfe">cfg</tspan></text>
+
+        <text x="74" y="482" xml:space="preserve"><tspan fill="#d4d4d4">}</tspan></text>
+      </g>
+
+      <!-- hover highlight on "cfg" -->
+      <rect x="108" y="424" width="30" height="18" rx="4" fill="#3ec6e0" opacity="0.22" stroke="#3ec6e0" stroke-width="1.2" stroke-opacity="0.8" />
+      <path d="M121,424 L172,412" stroke="#3ec6e0" stroke-width="1.4" stroke-dasharray="2,3" fill="none" opacity="0.65" />
+
+      <!-- hover tooltip (appears above the variable) -->
+      <g filter="url(#tooltipShadow)">
+        <rect x="190" y="160" width="460" height="252" rx="8" fill="#252526" stroke="#454545" stroke-width="1" />
+
+        <!-- default gopls hover line -->
+        <text x="208" y="190" font-family="SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="14" xml:space="preserve"><tspan fill="#569cd6">var</tspan><tspan fill="#d4d4d4"> </tspan><tspan fill="#9cdcfe">cfg</tspan><tspan fill="#d4d4d4"> </tspan><tspan fill="#d4d4d4">pkg</tspan><tspan fill="#d4d4d4">.</tspan><tspan fill="#4ec9b0">AppConfig</tspan></text>
+
+        <line x1="208" y1="208" x2="632" y2="208" stroke="#454545" stroke-width="1" />
+
+        <!-- "added by this extension" pill -->
+        <rect x="208" y="222" width="196" height="24" rx="12" fill="#3ec6e0" fill-opacity="0.15" stroke="#3ec6e0" stroke-opacity="0.55" stroke-width="1" />
+        <text x="306" y="238" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="11" font-weight="600" letter-spacing="0.6" fill="#5fdcf2">PEEK TYPE DEFINITION</text>
+
+        <!-- nested type body -->
+        <rect x="208" y="260" width="424" height="136" rx="6" fill="#1a1a1a" />
+        <g font-family="SFMono-Regular,Menlo,Consolas,'Liberation Mono',monospace" font-size="14" xml:space="preserve">
+          <text x="222" y="280" xml:space="preserve"><tspan fill="#569cd6">type</tspan><tspan fill="#d4d4d4"> </tspan><tspan fill="#4ec9b0">AppConfig</tspan><tspan fill="#d4d4d4"> </tspan><tspan fill="#569cd6">struct</tspan><tspan fill="#d4d4d4"> {</tspan></text>
+          <text x="222" y="300" xml:space="preserve"><tspan fill="#d4d4d4">    </tspan><tspan fill="#9cdcfe">Host</tspan><tspan fill="#d4d4d4">    </tspan><tspan fill="#4ec9b0">string</tspan></text>
+          <text x="222" y="320" xml:space="preserve"><tspan fill="#d4d4d4">    </tspan><tspan fill="#9cdcfe">Port</tspan><tspan fill="#d4d4d4">    </tspan><tspan fill="#4ec9b0">int</tspan></text>
+          <text x="222" y="340" xml:space="preserve"><tspan fill="#d4d4d4">    </tspan><tspan fill="#9cdcfe">Debug</tspan><tspan fill="#d4d4d4">   </tspan><tspan fill="#4ec9b0">bool</tspan></text>
+          <text x="222" y="360" xml:space="preserve"><tspan fill="#d4d4d4">    </tspan><tspan fill="#9cdcfe">Timeout</tspan><tspan fill="#d4d4d4"> </tspan><tspan fill="#d4d4d4">time</tspan><tspan fill="#d4d4d4">.</tspan><tspan fill="#4ec9b0">Duration</tspan></text>
+          <text x="222" y="380" xml:space="preserve"><tspan fill="#d4d4d4">}</tspan></text>
+        </g>
+      </g>
+    </g>
+    <rect x="0.5" y="0.5" width="759" height="539" rx="14" ry="14" fill="none" stroke="#000000" stroke-opacity="0.5" />
+  </g>
+
+  <!-- caption -->
+  <text x="380" y="570" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" font-size="14" font-style="italic" fill="#8b949e">Hover over a variable to see its full type definition — no jump required</text>
+</svg>

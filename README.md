@@ -1,10 +1,17 @@
-<h1 align="center">Go Peek Type Hover</h1>
+<h1 align="center">
+  <img src="images/icon.png" width="64" height="64" alt="Go Peek Type Hover icon"><br>
+  Go Peek Type Hover
+</h1>
 
 <p align="center">
   A VS Code extension that shows the <b>full type definition</b> of a variable right inside the hover tooltip in Go files — no jump required.
 </p>
 
 ---
+
+<p align="center">
+  <img src="images/hover-demo.png" alt="Hovering over a Go variable shows its full struct definition inline" width="760">
+</p>
 
 ## Why
 
