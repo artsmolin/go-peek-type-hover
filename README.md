@@ -1,5 +1,3 @@
-<p align="right">English · <a href="README.md">Русский</a></p>
-
 <h1 align="center">Go Peek Type Hover</h1>
 
 <p align="center">
