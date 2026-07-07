@@ -43,11 +43,7 @@ To see what's actually inside `AppConfig`, you have to jump to its definition (`
 
 ## Installation
 
-### From `.vsix`
-
-```bash
-code --install-extension go-peek-type-hover-0.0.1.vsix
-```
+Install from the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=artsmolin.go-peek-type-hover), or search for **Go Peek Type Hover** in the Extensions view (`Cmd+Shift+X` / `Ctrl+Shift+X`).
 
 ### From source (development mode)
 
